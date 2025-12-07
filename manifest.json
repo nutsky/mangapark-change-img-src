@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Image Host Replacer (MangaPark Only)",
+  "version": "1.1",
+  "description": "Replaces sXX hosts to s01 on mangapark.io and mpark.to.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mangapark.io/*",
+        "http://mangapark.io/*",
+        "https://mpark.to/*",
+        "http://mpark.to/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
