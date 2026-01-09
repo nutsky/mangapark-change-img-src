@@ -1,20 +1,25 @@
 function replaceImageHosts() {
-  document.querySelectorAll("img").forEach(img => {
-    const oldSrc = img.src;
-    if (!oldSrc) return;
+    var host = location.host;
+    console.log("running the script");
+    document.querySelectorAll("img").forEach(img => {
+        const rawSrc = img.getAttribute("src");
+        if (!rawSrc) return;
 
-    const match = oldSrc.match(/s(\d+)\./);
-    if (match) {
-      const newSrc = oldSrc.replace(/s(\d+)\./, "//s01.");
-      img.src = newSrc;
-      console.log("[Replaced]", oldSrc, "→", newSrc);
-    }
-  });
+        try {
+            const imgurl = new URL(img.src);
+            var imgSrcHost = imgurl.hostname;
+
+            if (imgSrcHost !== host) {
+                const newSrc = img.src.replace(imgSrcHost, host);
+                img.src = newSrc;
+                console.log("[replaced]", rawSrc, "→", newSrc);
+            } else {
+                console.log("[skipped] host is already", host)
+            }
+        } catch (e) {
+            console.error("error in img url:". rawSrc)
+        }
+    });
 }
 
-// Run once on load
 replaceImageHosts();
-
-// Also run repeatedly for lazy-loaded / infinite scroll images
-const obs = new MutationObserver(replaceImageHosts);
-obs.observe(document.body, { childList: true, subtree: true });
