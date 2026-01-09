@@ -11,6 +11,7 @@
         "https://mangapark.net/*",
         "https://mangapark.org/*",
         "https://mangapark.me/*",
+        "https://mangapark.to/*",
         "https://comicpark.org/*",
         "https://comicpark.to/*",
         "https://readpark.org/*",
@@ -18,7 +19,7 @@
         "https://parkmanga.com/*",
         "https://parkmanga.net/*",
         "https://parkmanga.org/*",
-        "https://mpark.to/*",
+        "https://mpark.to/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"
