@@ -7,9 +7,18 @@
     {
       "matches": [
         "https://mangapark.io/*",
-        "http://mangapark.io/*",
+        "https://mangapark.com/*",
+        "https://mangapark.net/*",
+        "https://mangapark.org/*",
+        "https://mangapark.me/*",
+        "https://comicpark.org/*",
+        "https://comicpark.to/*",
+        "https://readpark.org/*",
+        "https://readpark.net/*",
+        "https://parkmanga.com/*",
+        "https://parkmanga.net/*",
+        "https://parkmanga.org/*",
         "https://mpark.to/*",
-        "http://mpark.to/*"
       ],
       "js": ["content.js"],
       "run_at": "document_idle"
